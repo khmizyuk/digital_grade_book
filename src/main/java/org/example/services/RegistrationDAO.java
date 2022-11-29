@@ -41,6 +41,7 @@ public class RegistrationDAO {
                     .setLastName(lastName)
                     .setAccountType(accountType)
                     .setEmail(Character.toLowerCase(firstName.charAt(0)) + "." + lastName.toLowerCase() + "@42.fr")
+                    .setPassword(generatePassword())
                     .build();
             userRepository.save(user);
             return "Account has created!";

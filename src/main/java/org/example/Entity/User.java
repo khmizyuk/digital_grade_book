@@ -96,6 +96,11 @@ public class User {
             return this;
         }
 
+        public Builder setPassword(String password) {
+            User.this.password = password;
+            return this;
+        }
+
         public Builder setId(Long id) {
             User.this.id = id;
             return this;
