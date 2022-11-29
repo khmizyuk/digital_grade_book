@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String token;
+    private Long id;
 
     private String  email;
     private String  password;
@@ -53,12 +53,12 @@ public class User {
         this.email = email;
     }
 
-    public String getToken() {
-        return token;
+    public Long getId() {
+        return id;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setnId(Long id) {
+        this.id = id;
     }
 
     public String getPassword() {
@@ -96,8 +96,8 @@ public class User {
             return this;
         }
 
-        public Builder setToken(String token) {
-            User.this.token = token;
+        public Builder setId(Long id) {
+            User.this.id = id;
             return this;
         }
 
