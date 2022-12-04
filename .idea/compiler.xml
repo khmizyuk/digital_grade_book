@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="digital_grade_book" options="-parameters" />
+      <module name="digital_grade_book" options="" />
     </option>
   </component>
 </project>

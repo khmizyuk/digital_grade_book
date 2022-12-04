@@ -12,10 +12,10 @@ public class GradeBook {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long    id;
 
-    private String  studentId;
+    private String  studentLogin;
     private String  subject;
-    private String  teacherId;
-    private Integer markId;
+    private String  teacherLogin;
+    private String  mark;
     private Date    date;
 
     public Long getId() {
@@ -26,14 +26,6 @@ public class GradeBook {
         this.id = id;
     }
 
-    public String getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
     public String getSubject() {
         return subject;
     }
@@ -42,20 +34,12 @@ public class GradeBook {
         this.subject = subject;
     }
 
-    public String getTeacherId() {
-        return teacherId;
+    public String getMark() {
+        return mark;
     }
 
-    public void setTeacherId(String teacherId) {
-        this.teacherId = teacherId;
-    }
-
-    public Integer getMarkId() {
-        return markId;
-    }
-
-    public void setMarkId(Integer markId) {
-        this.markId = markId;
+    public void setMark(String mark) {
+        this.mark = mark;
     }
 
     public Date getDate() {
@@ -64,5 +48,21 @@ public class GradeBook {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getStudentLogin() {
+        return studentLogin;
+    }
+
+    public void setStudentLogin(String studentLogin) {
+        this.studentLogin = studentLogin;
+    }
+
+    public String getTeacherLogin() {
+        return teacherLogin;
+    }
+
+    public void setTeacherLogin(String teacherLogin) {
+        this.teacherLogin = teacherLogin;
     }
 }

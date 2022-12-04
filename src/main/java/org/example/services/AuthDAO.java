@@ -1,6 +1,5 @@
 package org.example.services;
 
-import org.example.CurrentUser;
 import org.example.Entity.User;
 import org.example.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +17,11 @@ public class AuthDAO {
     }
 
     public String auth(String email, String password) {
-        Optional<User> userOptional = userRepository.findById(email);
+        Optional<User> userOptional = userRepository.findByEmail(email);
 
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             if (user.getPassword().equals(password)) {
-                CurrentUser.accountType = user.getAccountType();
-                CurrentUser.id = user.getEmail();
                 return "You have signed in!";
             }
             else

@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import org.example.services.AuthDAO;
-import org.example.services.UserDAO;
+import org.example.services.FindUserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class Auth {
+public class AuthController {
     @Autowired
-    private UserDAO userService;
+    private FindUserDAO userService;
 
     @Autowired
     private AuthDAO authService;
@@ -24,9 +24,7 @@ public class Auth {
 
     @GetMapping("/user")
     public @ResponseBody
-    String showUserInfo() {
-        return userService.showUserInfo();
+    String showUserInfo(@RequestParam String login, @RequestParam String password) {
+        return userService.showUserInfo(login, password);
     }
 }
-
-// http://localhost:8080/auth?login=khmizyuk.s.i@42.fr&password=cpdgus-tkfhoa-nlcbdr

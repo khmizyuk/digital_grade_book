@@ -1,41 +1,32 @@
 package org.example.controller;
 
-import org.example.Entity.User;
-import org.example.services.UserDAO;
+import org.example.services.FindUserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 @Controller
 public class FindUserController {
+
     @Autowired
-    private UserDAO userService;
+    private FindUserDAO userService;
 
     @GetMapping("/user/{id}")
     public @ResponseBody
-    String findUserById(@PathVariable String id) {
-        return userService.findUserById(id);
+    String findUserById(@PathVariable String id, @RequestParam String login, @RequestParam String password) {
+        return userService.findUserById(id, login, password);
     }
 
     @GetMapping("/users")
-    public @ResponseBody
-    Iterable<org.example.Entity.User> findAllUsers() {
-        return userService.findAllUsers();
+    public @ResponseBody String findAllUsers(@RequestParam String login, @RequestParam String password) {
+        return userService.findAllUsers(login, password);
     }
 
     @GetMapping("/users/students")
-    public @ResponseBody
-    List<User> findAllStudents() {
-        return userService.findAllStudents();
+    public @ResponseBody String findAllStudents(@RequestParam String login, @RequestParam String password) {
+        return userService.findAllStudents(login, password);
     }
 }
-
-//Gson gson = new GsonBuilder()
-//        .setPrettyPrinting()
-//        .create();
-//String response = "hello, " + name;
-//    return gson.toJson(response);
