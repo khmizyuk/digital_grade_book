@@ -18,7 +18,6 @@ public class User {
 
     private String  firstName;
     private String  lastName;
-
     private String accountType;
 
     public String getFirstName() {
