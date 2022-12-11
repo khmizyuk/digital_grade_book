@@ -29,4 +29,10 @@ public class FindUserController {
     public @ResponseBody String findAllStudents(@RequestParam String login, @RequestParam String password) {
         return userService.findAllStudents(login, password);
     }
+
+    @GetMapping("/user")
+    public @ResponseBody
+    String showUserInfo(@RequestParam String login, @RequestParam String password) {
+        return userService.showUserInfo(login, password);
+    }
 }

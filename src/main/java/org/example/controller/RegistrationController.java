@@ -14,20 +14,13 @@ public class RegistrationController {
 
     @PostMapping("/user/add")
     public @ResponseBody
-    String registration(@RequestParam String firstName,
-                        @RequestParam String lastName,
-                        @RequestParam String accountType,
-                        @RequestParam String login,
-                        @RequestParam String password) {
+    String registration(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String accountType, @RequestParam String login, @RequestParam String password) {
         return registrationService.registration(firstName, lastName, accountType, login, password);
     }
 
     @PostMapping("/user/add_by_token")
     public @ResponseBody
-    String registration(@RequestParam String firstName,
-                        @RequestParam String lastName,
-                        @RequestParam String accountType,
-                        @RequestParam String token) {
+    String registration(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String accountType, @RequestParam String token) {
         return registrationService.registration(firstName, lastName, accountType, token);
     }
 }

@@ -16,6 +16,7 @@ import static org.example.App.GSON;
 
 @Service
 public class FindUserDAO {
+
     private final UserRepository userRepository;
 
     @Autowired

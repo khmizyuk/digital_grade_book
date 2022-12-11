@@ -21,10 +21,4 @@ public class AuthController {
     String auth(@RequestParam String login, @RequestParam String password) {
         return authService.auth(login, password);
     }
-
-    @GetMapping("/user")
-    public @ResponseBody
-    String showUserInfo(@RequestParam String login, @RequestParam String password) {
-        return userService.showUserInfo(login, password);
-    }
 }

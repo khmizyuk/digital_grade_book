@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Service
 public class AuthDAO {
+
     private final UserRepository userRepository;
 
     @Autowired
